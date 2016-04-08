@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let images:[UIImage] = [UIImage(named: "baldhill")!, UIImage(named: "cathedral")!, UIImage(named: "lake")!]
+        var instance : GameModel = GameModel(totalTileNumber: 12, images: images)
+        print(instance)
     }
 
     override func didReceiveMemoryWarning() {
