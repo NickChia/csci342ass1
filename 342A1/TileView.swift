@@ -12,10 +12,10 @@ class TileView: UIView {
     
     var image : UIImage?
     var imageView : UIImageView
-    var delegate : TileViewDelegator?
+    var delegator : TileViewDelegator?
     var tileIndex : Int?
     
-
+    var touchAction : UITapGestureRecognizer?
     
     required init?(coder aDecoder: NSCoder){
         
@@ -23,6 +23,9 @@ class TileView: UIView {
         imageView.image = UIImage(named: "question")!
         
         super.init(coder: aDecoder)
+        
+        touchAction = UITapGestureRecognizer(target: self, action: "touch")
+        tileIndex = self.tag
         
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -36,10 +39,30 @@ class TileView: UIView {
         
         addConstraints([width, height, top, left])
         
-
+        addGestureRecognizer(touchAction!)
+        
     }
     
+    func revealImage(){
+        imageView.image = UIImage(named: "lake")
+    }
+    
+    func coverImage(){
+        imageView.image = UIImage(named: "question")
+    }
+    
+    func hideImage(){
+        
+    }
+    
+    func touch(){
+        delegator?.didSelectTile(self)
+        image = UIImage(named: "lake")
+        imageView.image = image
+        
+    }
 }
+
 
 protocol TileViewDelegator{
     func didSelectTile(tileView: TileView)
