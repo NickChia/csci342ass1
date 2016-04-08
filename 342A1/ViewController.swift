@@ -28,6 +28,7 @@ class ViewController: UIViewController, TileViewDelegator, gameDelegator{
         // Do any additional setup after loading the view, typically from a nib.
         
         for i in 1...numOfTiles {
+            //cast ui view to TileView
             var tileView = view.viewWithTag(i) as! TileView
             tileViews.append(tileView)
             tileView.delegator = self
@@ -39,6 +40,7 @@ class ViewController: UIViewController, TileViewDelegator, gameDelegator{
         // Dispose of any resources that can be recreated.
     }
     
+    //deal image touch event
     func didSelectTile(tileView: TileView){
         tileView.imageView.image = instance.initialGameState[tileView.tileTag! - 1].tileImage
         if instance.isFirstTurn {
@@ -51,6 +53,7 @@ class ViewController: UIViewController, TileViewDelegator, gameDelegator{
         didMatchTile()
     }
     
+    //deal game over event
     func gameDidComplete(){
         if instance.matchedTileNumber == 6 {
             let time = 1 * Double(NSEC_PER_SEC)
@@ -70,6 +73,7 @@ class ViewController: UIViewController, TileViewDelegator, gameDelegator{
         }
     }
     
+    //deal tiles matching
     func didMatchTile(){
         if instance.isFirstTurn
         {
@@ -93,6 +97,7 @@ class ViewController: UIViewController, TileViewDelegator, gameDelegator{
 
     }
     
+    //deal tiles not matched
     func didFailToMatchTile(){
         let time = 1 * Double(NSEC_PER_SEC)
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(time))
@@ -103,6 +108,7 @@ class ViewController: UIViewController, TileViewDelegator, gameDelegator{
         scoreDidUpdate(-100)
     }
     
+    //update score
     func scoreDidUpdate(newScore: Int){
         instance.score += newScore
         score.text = "Score: " + String(instance.score)
@@ -113,7 +119,7 @@ class ViewController: UIViewController, TileViewDelegator, gameDelegator{
         let msg = "You get: " + String(self.instance.score) + " score"
         let alertController = UIAlertController(title: "Finished", message:
             msg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default,handler: nil))
+        alertController.addAction(UIAlertAction(title: "Try Again", style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
     }
 }
