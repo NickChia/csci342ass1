@@ -13,6 +13,7 @@
 		016CA5F41CB5299200AC3852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 016CA5F31CB5299200AC3852 /* Assets.xcassets */; };
 		016CA5F71CB5299200AC3852 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016CA5F51CB5299200AC3852 /* LaunchScreen.storyboard */; };
 		016CA5FF1CB52A1400AC3852 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CA5FE1CB52A1400AC3852 /* GameModel.swift */; };
+		016CA6011CB78D9300AC3852 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CA6001CB78D9300AC3852 /* TileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		016CA5F61CB5299200AC3852 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		016CA5F81CB5299200AC3852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		016CA5FE1CB52A1400AC3852 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		016CA6001CB78D9300AC3852 /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				016CA5EC1CB5299200AC3852 /* AppDelegate.swift */,
+				016CA6001CB78D9300AC3852 /* TileView.swift */,
 				016CA5FE1CB52A1400AC3852 /* GameModel.swift */,
 				016CA5EE1CB5299200AC3852 /* ViewController.swift */,
 				016CA5F01CB5299200AC3852 /* Main.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				016CA5EF1CB5299200AC3852 /* ViewController.swift in Sources */,
 				016CA5ED1CB5299200AC3852 /* AppDelegate.swift in Sources */,
+				016CA6011CB78D9300AC3852 /* TileView.swift in Sources */,
 				016CA5FF1CB52A1400AC3852 /* GameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
