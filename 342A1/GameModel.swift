@@ -6,19 +6,18 @@
 //  Copyright © 2016年 Nick. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 import UIKit
 
 class GameModel: CustomStringConvertible
 {
-    //part1 a:
+    //tile data structure
     struct TileData
     {
         var tileImage : UIImage
         var imageId : Int
     }
     
-    //part1 b:
     var lastIndex: Int
     var secLastIndex: Int
     var initialGameState: [TileData] = []
@@ -31,7 +30,7 @@ class GameModel: CustomStringConvertible
     var totalTileNumber : Int
     var images : [UIImage]
     
-    //part1 c:
+    //init GameModel
     init(totalTileNumber: Int,  images: [UIImage]){
         lastIndex = 0
         secLastIndex = 0
@@ -45,6 +44,7 @@ class GameModel: CustomStringConvertible
         reset()
     }
     
+    //reset GameModel
     func reset(){
         lastIndex = 0
         secLastIndex = 0
@@ -66,7 +66,6 @@ class GameModel: CustomStringConvertible
         for i in 1..<totalTileNumber {
             swap(&initialGameState[i], &initialGameState[Int(arc4random_uniform(UInt32(i-1)))])
         }
-
     }
     
     var description: String{
@@ -81,12 +80,11 @@ class GameModel: CustomStringConvertible
         secLastIndex = lastIndex
         lastIndex = tileIndex
     }
-    
 }
 
 protocol gameDelegator{
-    func gameDidComplete(gameModel : GameModel)
-    func didMatchTile(gameModel : GameModel, tileIndex : Int, previousTileIndex: Int)
-    func didFailToMatchTile(gameModel : GameModel, tileIndex : Int, previousTileIndex:Int)
-    func scoreDidUpdate(gameModel : GameModel, newScore: Int)
+    func gameDidComplete()
+    func didMatchTile()
+    func didFailToMatchTile()
+    func scoreDidUpdate(newScore: Int)
 }

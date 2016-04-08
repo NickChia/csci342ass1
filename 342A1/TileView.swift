@@ -13,38 +13,39 @@ class TileView: UIView {
     var image : UIImage?
     var imageView : UIImageView
     var delegator : TileViewDelegator?
-    var tileIndex : Int?
+    var tileTag : Int?
     
     var touchAction : UITapGestureRecognizer?
     
     required init?(coder aDecoder: NSCoder){
-        
+        //initial view image
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height:45))
         imageView.image = UIImage(named: "question")!
         
         super.init(coder: aDecoder)
         
+        //register touchAction
         touchAction = UITapGestureRecognizer(target: self, action: "touch")
-        tileIndex = self.tag
+        tileTag = self.tag
         
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         let width = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0)
-        
         let height = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0)
-        
         let top = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
-        
         let left = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         
+        //add constraints
         addConstraints([width, height, top, left])
         
+        //add action listener
         addGestureRecognizer(touchAction!)
         
     }
     
     func revealImage(){
-        imageView.image = UIImage(named: "lake")
+        imageView.image = image
+        //self.hidden = false
     }
     
     func coverImage(){
@@ -52,14 +53,16 @@ class TileView: UIView {
     }
     
     func hideImage(){
-        
+        imageView.hidden = true
+        removeGestureRecognizer(touchAction!)
     }
     
     func touch(){
         delegator?.didSelectTile(self)
-        image = UIImage(named: "lake")
-        imageView.image = image
-        
+    }
+    
+    func addGesture() {
+         addGestureRecognizer(touchAction!)
     }
 }
 

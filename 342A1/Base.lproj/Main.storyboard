@@ -26,15 +26,12 @@
                                         <subviews>
                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlu-ne-dyC" customClass="TileView" customModule="_42A1" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="128"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4s-bx-mLN" customClass="TileView" customModule="_42A1" customModuleProvider="target">
                                                 <rect key="frame" x="188" y="0.0" width="184" height="128"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUj-K6-puf" customClass="TileView" customModule="_42A1" customModuleProvider="target">
                                                 <rect key="frame" x="377" y="0.0" width="183" height="128"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -43,15 +40,12 @@
                                         <subviews>
                                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPh-Je-TLz" customClass="TileView" customModule="_42A1" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="127"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3x-Ts-8Ap" customClass="TileView" customModule="_42A1" customModuleProvider="target">
                                                 <rect key="frame" x="188" y="0.0" width="184" height="127"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBA-9t-Rja" customClass="TileView" customModule="_42A1" customModuleProvider="target">
                                                 <rect key="frame" x="377" y="0.0" width="183" height="127"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -60,15 +54,12 @@
                                         <subviews>
                                             <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ark-du-sLC" customClass="TileView" customModule="_42A1" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="128"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view tag="8" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zgu-Sh-vja" customClass="TileView" customModule="_42A1" customModuleProvider="target">
                                                 <rect key="frame" x="188" y="0.0" width="184" height="128"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view tag="9" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ai-qs-cC4" customClass="TileView" customModule="_42A1" customModuleProvider="target">
                                                 <rect key="frame" x="377" y="0.0" width="183" height="128"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -77,15 +68,12 @@
                                         <subviews>
                                             <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eN9-yf-hpI" customClass="TileView" customModule="_42A1" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="127"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Caw-Tt-Llq" customClass="TileView" customModule="_42A1" customModuleProvider="target">
                                                 <rect key="frame" x="188" y="0.0" width="184" height="127"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjH-2u-El7" customClass="TileView" customModule="_42A1" customModuleProvider="target">
                                                 <rect key="frame" x="377" y="0.0" width="183" height="127"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -120,6 +108,9 @@
                             <constraint firstItem="1qM-qb-tfd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zTA-mg-9sI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="score" destination="RvG-z9-PWF" id="aea-7n-IsN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
