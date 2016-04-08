@@ -77,6 +77,11 @@ class GameModel: CustomStringConvertible
         return desc
     }
     
+    func pushTileIndex(tileIndex : Int){
+        secLastIndex = lastIndex
+        lastIndex = tileIndex
+    }
+    
 }
 
 protocol gameDelegator{
