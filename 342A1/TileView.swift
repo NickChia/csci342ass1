@@ -10,7 +10,37 @@ import UIKit
 
 class TileView: UIView {
     
-    required init(coder aDecoder: NSCoder){
-        super.init(coder: aDecoder)!
+    var image : UIImage?
+    var imageView : UIImageView
+    var delegate : TileViewDelegator?
+    var tileIndex : Int?
+    
+
+    
+    required init?(coder aDecoder: NSCoder){
+        
+        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height:45))
+        imageView.image = UIImage(named: "question")!
+        
+        super.init(coder: aDecoder)
+        
+        addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        let width = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0)
+        
+        let height = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0)
+        
+        let top = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        
+        let left = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        
+        addConstraints([width, height, top, left])
+        
+
     }
+    
+}
+
+protocol TileViewDelegator{
+    func didSelectTile(tileView: TileView)
 }
